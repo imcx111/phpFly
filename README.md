@@ -22,7 +22,7 @@ Thinkphp5 + Layui Fly Template实现的一个社区项目，使用X-admin实现�
 
 1.  服务器环境开启pathinfo，并且支持rewrite(伪静态)
 2.  暂时没想到其他需要注意的地方，
-3.  有问题可以直接在演示论坛里留言
+3.  有问题可以直接在演示论坛里留言或邮件我（bjphper@qq.com）
 
 
 #### 技术栈/运行环境
