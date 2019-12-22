@@ -37,7 +37,9 @@ Thinkphp5 + Layui Fly Template实现的一个社区项目，使用X-admin实现�
 
 #### 演示地址
 
-[http://fly.mmno.com](http://fly.mmno.com "http://fly.mmno.com")
+前台：[http://fly.mmno.com](http://fly.mmno.com "http://fly.mmno.com")  
+后台：[http://fly.mmno.com/admin-test.php](http://fly.mmno.com/admin-test.php "http://fly.mmno.com/admin-test.php")  
+后台账号密码：superadmin/123456
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1222/201641_b30a01c9_593571.jpeg "前端")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1222/201657_202c9dea_593571.jpeg "后端")
