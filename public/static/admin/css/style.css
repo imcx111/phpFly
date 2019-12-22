@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2019-12-17, 13:46:24
+    Author     : seqier
+*/
+
+.empty{
+    font-size: 1.5em;
+    color: #ccc;
+    line-height: 2em;
+    text-align: center;
+    font-weight: 200;
+    margin: 50px 0;
+}
+.empty i{
+    font-size: 1em;
+}
+
+
+
+#categroys {
+    float: left;
+    width: 200px;
+    border-right: 1px solid #eaeaea;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    background: #fafafa;
+}
+#categroys #tree {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+#categroys_content {
+    position: relative;
+    margin-left: 200px;
+    overflow: hidden;
+}

@@ -108,3 +108,12 @@ if (is_array($member)) {
     });
 </script>
 {block name="foot_js"}{/block}
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bfca60d8579a0829469bc63e06907200";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>

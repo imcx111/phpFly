@@ -13,8 +13,6 @@ use think\Db;
 
 class SystemUser extends Base {
 
-    
-
     /**
      * @title 注册
      * @param type $post
@@ -42,9 +40,11 @@ class SystemUser extends Base {
         $account = $post['account'] ?? '';
         $password = $post['password'] ?? '';
 
+        //echo my_md5($password); exit;
+
         $one = db('system_user')
                 ->where('account', $account)
-                ->where('password', $password)
+                ->where('password', my_md5($password))
                 ->field('id,account,nickname')
                 ->find();
 
@@ -59,16 +59,14 @@ class SystemUser extends Base {
             return '不存在的用户';
         }
     }
-    
-    
-    
+
     public function model_where() {
 
-         
+
 
         if (request()->get('keyword'))
             $this->where('nickname', 'like', '%' . request()->get('keyword') . '%');
-        
+
         $this->order('id desc');
 
         return $this;

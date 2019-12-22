@@ -19,7 +19,7 @@
                             <input type="text" name="keyword"  placeholder="请输入账号" autocomplete="off" class="layui-input" value="<?php echo input('get.keyword') ?>">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                            <button class="layui-btn layui-btn-sm"  lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
                         </div>
                     </form>
                 </div>

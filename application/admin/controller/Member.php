@@ -38,7 +38,7 @@ class Member extends Admin {
      */
     public function index() {
 
-        $lists = model('member')->model_where()->paginate(20, false, ['query' => request()->get()]);
+        $lists = model('member')->model_where()->paginate(10, false, ['query' => request()->get()]);
         $this->assign('pager', $lists->render());
         $this->assign('lists', $lists);
 
@@ -53,7 +53,6 @@ class Member extends Admin {
                 ->addItem('identification', '认证信息')
                 ->addItem('create_time', '注册')
                 ->addItem('update_time', '更新')
-                ->addAction('编辑', 'edit', '<i class="layui-icon layui-icon-edit"></i>')
                 ->addAction('删除', 'delete', '<i class="layui-icon layui-icon-delete"></i>', 'ajax-get confirm layui-btn-danger')
                 ->addAction('认证', 'ident', '<i class="layui-icon layui-icon-vercode"></i>', 'openbox layui-btn-success')
                 ->build();

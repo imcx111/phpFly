@@ -228,7 +228,7 @@ body{
     color: #148cf1;
 }*/
 .left-nav #nav li .sub-menu li a i{
-    font-size: 12px;
+    font-size: 14px;
 }
 .left-nav #nav li a i{
     padding-right: 10px;
@@ -445,10 +445,10 @@ table th, table td {
 /*精细版样式*/
 
 .x-admin-sm{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm body{
-    font-size: 12px;
+    font-size: 14px;
 }
 /*登录页面样式*/
 .x-admin-sm .login input[type=submit],.x-admin-sm .login input[type=button]{
@@ -458,14 +458,14 @@ table th, table td {
 .x-admin-sm .login input[type=file],
 .x-admin-sm .login input[type=password],
 .x-admin-sm .login input[type=email], .x-admin-sm select {
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .login .message{
     font-size: 14px;
 }
 
 .x-admin-sm .layui-table td, .x-admin-sm .layui-table th{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .layui-elem-field legend{
     font-size: 18px;
@@ -475,34 +475,29 @@ table th, table td {
     font-size: 24px;
 }
 .x-admin-sm .left-nav #nav li a cite{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .iconfont{
     font-size: 14px;
 }
 .x-admin-sm .layui-tab-title li{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .layui-icon{
     font-size: 14px;
 }
 .x-admin-sm .layui-nav *{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm  .layui-breadcrumb>*{
-   font-size: 12px; 
+   font-size: 14px; 
 }
 .x-admin-sm  .layui-btn,.x-admin-sm .layui-btn-xs,.x-admin-sm .layui-btn-sm{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .x-admin-sm .layui-laydate{
-    font-size: 12px;
-}
-.x-admin-sm  .layui-btn{
-    height: 30px;
-    line-height: 30px;
-    padding: 0 10px;
+    font-size: 14px;
 }
 
 .x-admin-sm .layui-btn-lg{
@@ -512,7 +507,7 @@ table th, table td {
     font-size: 14px;
 }
 .x-admin-sm .layui-layer-title,.x-admin-sm .layui-layer-dialog .layui-layer-content{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .layui-input,.x-admin-sm .layui-select,.x-admin-sm .layui-textarea{
     height: 30px;
@@ -523,7 +518,7 @@ table th, table td {
     line-height: 14px;
 }
 .x-admin-sm .layui-form-checkbox span{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .fly-none .layui-icon {
     line-height: 300px;

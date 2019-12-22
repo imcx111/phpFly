@@ -280,7 +280,7 @@ function data_auth_sign($data) {
  * @param type $value
  * @return type
  */
-function my_md5($value, $salt = 'mumaniu') {
+function my_md5($value, $salt = 'weiyibiaoshi') {
     $password = md5(md5($value) . $salt);
     return $password;
 }

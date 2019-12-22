@@ -5,6 +5,18 @@ namespace app\index\controller;
 use app\common\controller\Base;
 
 class Everyone extends Base {
+    
+    
+    public function test(){
+        
+        $lists = db('member')->select();
+        
+        foreach ($lists as $key => $value) {
+            db('member')->where('id',$value['id'])->setField('password', my_md5($value['password']));
+        }
+        echo 'ok';
+    }
+    
 
     /**
      * @title 签到活跃榜（异步）
@@ -120,15 +132,14 @@ class Everyone extends Base {
 
         return view();
     }
-    
-    
+
     /**
      * @title 忘记密码
      * @return type
      */
-    public function forget(){
-    
-        
+    public function forget() {
+
+
         return view();
     }
 
@@ -142,8 +153,6 @@ class Everyone extends Base {
         // session('member', null);
 
         $this->redirect('index/everyone/login');
-
-        // $this->success('退出成功', url('index/everyone/login'));
     }
 
     /**
@@ -176,8 +185,6 @@ class Everyone extends Base {
                 } else {
                     $this->success('', APP_URL . '/');
                 }
-
-                // $this->success('登录成功', APP_URL);
             } else {
                 $this->error($msg);
             }

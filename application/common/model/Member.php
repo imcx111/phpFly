@@ -193,9 +193,9 @@ class Member extends Base {
      */
     public function reg($post) {
 
-        $data['email'] = $post['email'] ?? '';
-        $data['nickname'] = $post['nickname'] ?? '';
-        $data['password'] = $post['password'] ?? '';
+        $data['email'] = $post['email'];
+        $data['nickname'] = $post['nickname'];
+        $data['password'] = my_md5($post['password']);
         $data['create_time'] = time();
         $data['update_time'] = time();
 
@@ -214,14 +214,14 @@ class Member extends Base {
 
         $member = db('member')
                 ->where('email', $email)
-                ->where('password', $password)
+                ->where('password', my_md5($password))
                 ->field('id,email,nickname,avatar,sex')
                 ->find();
 
         if ($member) {
             $this->session_update($member['id']);
         } else {
-            return '不存在的用户';
+            return '登录失败';
         }
     }
 

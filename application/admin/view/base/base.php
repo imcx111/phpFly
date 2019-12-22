@@ -20,9 +20,7 @@
         <link rel="stylesheet" href="__PUBLIC__/static/admin/css/style.css">
         
         <script type="text/javascript" src="__PUBLIC__/libs/jquery/2.1.1/jquery.min.js"></script>
-        
-        
-     
+         
          
     </head>
     <body>

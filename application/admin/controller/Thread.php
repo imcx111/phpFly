@@ -62,7 +62,6 @@ class Thread extends Admin {
                 ->addItem('create_time', '时间')
                 ->addItem('top', '置顶')
                 ->addItem('recommend', '推荐')
-                ->addAction('编辑', 'edit', '<i class="layui-icon layui-icon-edit"></i>')
                 ->addAction('删除', 'delete', '<i class="layui-icon layui-icon-delete"></i>', 'ajax-get confirm layui-btn-danger')
                 ->build();
 

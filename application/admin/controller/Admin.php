@@ -9,7 +9,6 @@ class Admin extends Base {
     protected function _initialize() {
         parent::_initialize();
 
-
         // 后台登录的判断         
         $admin = admin_is_login();
         $admin_id = (is_array($admin)) ? $admin['id'] : -1;
@@ -19,16 +18,6 @@ class Admin extends Base {
             $this->redirect(url('admin/everyone/login'));
             exit;
         }
-
-//        $admin_is_login = admin_is_login();
-//
-//        if (is_array($admin_is_login)) {
-//            session('admin', $admin_is_login);
-//        } else {
-//            $this->redirect(url('admin/everyone/login'));
-//            // $this->error($admin_is_login, url('admin/everyone/login'));
-//            exit;
-//        }
     }
 
     /**
