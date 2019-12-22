@@ -1,0 +1,145 @@
+.m-checkinCalendarPrompt-box{
+    position: absolute;
+    padding-top: -11px;
+    z-index: 100;
+    left:-100px
+}
+
+.m-checkinCalendarPrompt{
+    padding: 10px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.m-checkinCalendarPrompt-tip{
+    padding-bottom: 11px;
+    line-height: 22px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+.m-checkinCalendarPrompt .u-icon-arrowup{
+    position: absolute;
+    left: 50%;
+    top: 3px;
+    margin-left: -8px;
+}
+/*考拉豆日期控件样式*/
+.m-checkinCalendar .isGiftDay .before,
+.m-checkinCalendar .isSigned .before,
+.m-checkinCalendar .calendar-hd .before{
+    position: absolute;
+    background-image: url(//mm.bst.126.net/images/checkinCalendar/checkinCalendar-sprite.png?73a880ec7dfa4eaac823f70f1c7602b0);
+
+}
+.m-checkinCalendar{
+    padding: 8px;
+    width: 398px;
+    height: 322px;
+    background-color: #fee7e9;
+    font-size: 14px;
+}
+
+.m-checkinCalendar .calendar-hd{
+    position: relative;
+    padding: 0 25px 6px;
+    height: 23px;
+    line-height: 23px;
+}
+
+.m-checkinCalendar .calendar-hd .before{
+    width: 14px;
+    height: 15px;
+    left: 4px;
+    top: 4px;
+    background-position: 0 0;
+}
+
+.m-checkinCalendar .calendar-bd{
+
+}
+
+.m-checkinCalendar .calendar-week-box{
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    background-color: #c21438;
+    text-align: center;
+}
+
+.m-checkinCalendar .calendar-week{
+    width: 56px;
+    float: left;
+    border-right: 1px solid transparent;
+}
+
+.m-checkinCalendar .calendar-week.last{
+    border: none;
+}
+
+.m-checkinCalendar .calendar-day{
+    font-size: 14px;
+}
+
+.m-checkinCalendar .calendar-days{
+    margin-right: -1px;
+    margin-bottom: -1px;
+    font-size: 12px;
+}
+
+.m-checkinCalendar .calendar-day-box{
+    position: relative;
+    padding: 3px 0 3px 12px;
+    margin: 0 1px 1px 0;
+    width: 44px;
+    height: 36px;
+    float: left;
+    background-color: #fff;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.m-checkinCalendar .canGetPrint{
+    color: #999;
+    line-height: 16px;
+}
+
+.m-checkinCalendar .isSigned .before{
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-position: 0 -37px;
+}
+
+.m-checkinCalendar .isSigned .canGetPrint{
+    color: #333;
+    font-weight: bold;
+}
+
+.m-checkinCalendar .today .calendar-day{
+    color: #d12548;
+}
+
+.m-checkinCalendar .today .after{
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d22248;
+}
+
+.m-checkinCalendar .no-nowMonth-day{
+    color: #ccc;
+}
+
+.m-checkinCalendar .isGiftDay .before{
+    width: 18px;
+    height: 19px;
+    right: 2px;
+    bottom: 2px;
+    background-position: 0 -17px;
+}
