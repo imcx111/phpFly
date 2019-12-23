@@ -102,8 +102,8 @@ class Everyone extends Base {
                 exit;
         }
 
-
-        $one = model('member')->where('id', $id)->find()->toArray();
+        $wheres[] = ['a.id', '=', $id];
+        $one = model('member')->model_where($wheres)->find()->toArray();
 
         $one['follow_type'] = model('member_follow')->follow_type($one['id'], $member_id);
 
