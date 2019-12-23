@@ -90,14 +90,13 @@ class Index extends Base {
         if ($thread_column['join_type'] == 1) {
             // 没有达到VIP级别，展示一个无权访问页面
             if ($vip < $thread_column['vip_limit']) {
-                return false;
+                return '无法进入该会员专区，至少VIP' . $thread_column['vip_limit'] . '级会员可访问';
             }
         } elseif ($thread_column['join_type'] == 2) {
             if ($points < $thread_column['points_limit']) {
-                return false;
+                return '无法进入该会员专区，至少' . $thread_column['points_limit'] . '积分的会员可访问';
             }
         }
-        return true;
     }
 
     /**
@@ -118,9 +117,9 @@ class Index extends Base {
             $cid = 0;
         }
 
-        // 浏览权限
-        if (!$this->_thread_access($cid)) {
-            return view('everyone/access_denied');
+        // 浏览权限        
+        if ($msg = $this->_thread_access($cid)) {
+            return view('everyone/access_denied', ['msg' => $msg]);
             exit;
         }
 

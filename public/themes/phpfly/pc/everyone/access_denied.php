@@ -33,7 +33,7 @@
     <div class="fly-panel">
         <div class="fly-none">
             <h2><i class="iconfont icon-tishilian"></i></h2>
-            <div class="notice">无法进入该会员专区</div>
+            <div class="notice">{$msg}</div>
         </div>
     </div>
 </div>
