@@ -181,10 +181,9 @@ class Index extends Base {
         ];
         $one = model('thread')->model_where($wheres)->find()->toArray();
 
-
-        // 浏览权限
-        if (!$this->_thread_access($one['cid'])) {
-            return view('everyone/access_denied');
+        // 浏览权限        
+        if ($msg = $this->_thread_access($cid)) {
+            return view('everyone/access_denied', ['msg' => $msg]);
             exit;
         }
 
