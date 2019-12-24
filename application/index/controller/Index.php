@@ -147,9 +147,9 @@ class Index extends Base {
         //
         $pager = new Page();
         if ($type) {
-            $url = url('/thread/' . $alias . '/' . $type) . '/page/{page}/';
+            $url = url('/column/' . $alias . '/' . $type) . '/page/{page}/';
         } else {
-            $url = url('/thread/' . $alias) . '/page/{page}/';
+            $url = url('/column/' . $alias) . '/page/{page}/';
         }
 
         $pager->setUrl($url);

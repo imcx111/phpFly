@@ -46,7 +46,7 @@
                                         <tr id="gallery-image-row<?php echo $key2; ?>"> 
                                             <td><input type="text" name="configs[<?php echo $key2; ?>][key]" value="<?php echo $lists[1][$key2] ?>" class="layui-input"></td> 
                                             <td><input type="text" name="configs[<?php echo $key2; ?>][value]" value="<?php echo $lists[2][$key2] ?>" class="layui-input"></td> 
-                                            <td><input type="text" name="configs[<?php echo $key2; ?>][remark]" value="<?php echo ltrim($lists[3][$key2], '//') ?>" class="layui-input"></td> 
+                                            <td><input type="text" name="configs[<?php echo $key2; ?>][remark]" value="<?php echo ltrim($lists[4][$key2], '//') ?>" class="layui-input"></td> 
                                             <td><button type="button" onclick="document.getElementById('gallery-image-row<?php echo $key2; ?>').remove();value_row--;" data-toggle="tooltip" class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon">&#xe640;</i></button></td>
                                         </tr>    
                                     <?php } ?>

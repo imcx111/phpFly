@@ -9,7 +9,6 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-use think\Route;
 
 return [
     '__pattern__' => [
@@ -20,13 +19,13 @@ return [
     '[portal]' => [
         ':id' => ['index/everyone/portal', ['method' => 'get'], ['id' => '\d+']],
     ],
-    '[thread]' => [
-        ':id' => ['index/thread_views', ['method' => 'get'], ['id' => '\d+']],      
-        
+    '[column]' => [
         ':alias/:type/page/:page' => ['index/thread', ['method' => 'get']],
         ':alias/page/:page' => ['index/thread', ['method' => 'get']],
-        
         ':alias/:type' => ['index/thread', ['method' => 'get']],
         ':alias' => ['index/thread', ['method' => 'get']],
+    ],
+    '[thread]' => [
+        ':id' => ['index/thread_views', ['method' => 'get'], ['id' => '\d+']],
     ],
 ];

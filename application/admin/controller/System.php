@@ -51,6 +51,7 @@ class System extends Admin {
         $base_dir = APP_DIR . '/../application/extra/';
 
         if (request()->isPost()) {
+            
             $category = input('post.category');
             $category_root = $base_dir . $category;
             if (is_file($category_root)) {
@@ -94,7 +95,9 @@ class System extends Admin {
 
 
             // 解析配置
-            preg_match_all("/\'?([^']*)\'? => \'(.*)\',\s*(\/\/[^\r\n]*)?/i", $config_content, $matches);
+            // preg_match_all("/\'?([^']*)\'? => \'(.*)\',\s*(\/\/[^\r\n]*)?/i", $config_content, $matches);
+            //preg_match_all("/(['\"]?)(.*?)\1\s*=>\s*(['\"]?)(.*?)\3,(\/\/)?([^\r\n]*)/i", $config_content, $matches);
+            preg_match_all("/\s*[\'\"]?(.*?)[\'\"]?\s*=>\s*[\'\"]?(.*?)[\'\"]?,(\s*\/\/)?([^\r\n]*)/", $config_content, $matches);
             // dd($matches);
             $this->assign('lists', $matches);
 

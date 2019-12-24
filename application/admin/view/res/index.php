@@ -1,16 +1,9 @@
 {extend name="base:base" /}
 {block name="body"}  
-
-
-
 <style>
-
-
-
     .lightbox img{
         margin: 0 auto;
     }   
-
     .lightbox .img_title{
         position: relative;
         height: 30px;
@@ -24,17 +17,13 @@
     #button-search{
         cursor: pointer;
     }
-
-
     ul.common{
         overflow: hidden;
-        
     }
     ul.common li{         
         float: left;
         padding-right: 15px;
     }   
-
     @media screen and (max-width: 800px) {
         ul.common li{
             float: none;
@@ -43,18 +32,12 @@
         }
     }
 </style>
-
-
-
 <div class="layui-fluid">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <form class="layui-form1" action="">
-
                 <div class="layui-card">
-
                     <div class="layui-card-body">
-
                         <ul class="common">
                             <li><a href="<?php echo $data['parent']; ?>" id="button-parent" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-up"></i> 上级</a></li>
                             <li><a id="button-refresh" class="layui-btn layui-btn-primary"><i class="layui-icon layui-icon-refresh"></i> 刷新</a></li>
@@ -74,34 +57,16 @@
                                 </div>            
                                 <button class="layui-btn layui-btn-normal" lay-submit><i class="layui-icon layui-icon-search"></i></button>
                             </li>
-
-
                         </ul>
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                     <div class="layui-card-body ">
-
-
                         <div class="">
                             <?php if ($folder == 'image') { ?>
-
                                 <?php if (empty($data['images'])) { ?>
                                     <div class="layui-row text-warning" style="margin: 50px; text-align: center; ">
                                         <i class="layui-icon layui-icon-face-surprised" style="font-size: 26px; font-weight: bold;"></i>   <span style=" font-size: 24px;">没有任何文件</span> 
                                     </div>  
-
                                 <?php } ?>
-
                                 <?php foreach (array_chunk($data['images'], 6) as $image_lists) { ?>
                                     <div class="layui-row" style="margin-bottom: 20px;">
                                         <?php foreach ($image_lists as $image) { ?>
@@ -116,7 +81,6 @@
                                                             <?php echo $image['name']; ?>
                                                         </label>
                                                     </div>
-
                                                 <?php } ?>
                                                 <?php if ($image['category'] == 'image') { ?>
                                                     <div class="image" style="margin:10px;border: 1px solid #BBB5B5">
@@ -133,7 +97,6 @@
                                                             <button class="layui-btn layui-btn-primary layui-btn-xs copy" data-clipboard-text="<?php echo res_http($image['path']); ?>">复制路径</button>
                                                         </label>
                                                     </div>
-
                                                 <?php } ?>
                                             </div>
                                         <?php } ?>
@@ -180,12 +143,8 @@
                                 </div>
                             <?php } ?>
                         </div>
-
-
-
                     </div>
                     <div class="layui-card-body">
-
                         <ul class="common">
                             <li><input class="all-file" type="checkbox"/> 全选  </li>
                             <li><button id="button-delete" class="layui-btn layui-btn-danger"><i class="fa fa-remove"></i> 删除</button></li>
@@ -196,64 +155,31 @@
                                         echo implode('/', $ext_arr[$category]);
                                     }
                                     ?>
-
                                     <strong> 限制大小：</strong><?php echo format_bytes($file_size); ?>/<?php echo ini_get('upload_max_filesize'); ?>/<?php echo ini_get('post_max_size'); ?>
                                 </span></li>
                             <li><?php echo $pagination; ?></li>
-
-
                         </ul>
-
-
-
-
-
-
-
-
                     </div>
                 </div>
-
             </form>
         </div>
     </div>
 </div> 
-
-
-
-
-
-
-
-
 {/block}
-
-
-
 {block name="foot_js"}
-
 <script type="text/javascript" src="__PUBLIC__/libs/jquery/2.0.0/jquery.min.js"></script>
-
 <!--复制-->
 <script type="text/javascript" src="__PUBLIC__/libs/jquery.clipboard/clipboard.min.js"></script>
 <!--LAYER-->
 <script type="text/javascript" src="__PUBLIC__/libs/layer/3.0/layer.js"></script>
-
 <!--lightBox-->
 <link rel="stylesheet" href="__PUBLIC__/libs/jquery-lightbox/css/simplelightbox.min.css"/>
 <script type="text/javascript" src="__PUBLIC__/libs/jquery-lightbox/js/simple-lightbox.min.js"></script>
-
 <script type="text/javascript">
-
     $(function () {
         $('a.lightbox').simpleLightbox();
     });
-
-
     $(function () {
-
-
-
         function parent_img_select(thumb, hidden) {
             //注意：parent 是 JS 自带的全局对象，可用于操作父页面
             var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
@@ -265,20 +191,15 @@
 <?php } ?>
             parent.layer.close(index);
         }
-
-
         //图片给父页面传值
         $('a.lightbox').on('click', function () {
             parent_img_select($(this).find('img').attr('src'), $(this).parent().find('input').attr('value'));
         });
-
         // 文件给父页面传值 
         function parent_file_select(val) {
             //var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
             //parent.layer.iframeAuto(index);
-
             var index = parent.layer.getFrameIndex(window.name);
-
             if (val === '') {
                 parent.layer.msg('请填写标记');
                 return;
@@ -286,17 +207,11 @@
             // parent.layer.msg('您将标记 [ ' + val + ' ] 成功传送给了父窗口');
             var id = $('#inpuuname').val();
             parent.layui.$('#' + id).attr('value', val);
-
             parent.layer.close(index);
-
         }
-
         $('.select').click(function () {
             parent_file_select($(this).data('val'));
         });
-
-
-
         var clipboard = new ClipboardJS('.copy');
         clipboard.on('success', function (e) {
             alert("复制成功！")
@@ -304,8 +219,6 @@
         clipboard.on('error', function (e) {
             alert("复制失败！请手动复制")
         });
-
-
         $('input[name=\'search\']').on('keydown', function (e) {
             if (e.which == 13) {
                 $('#button-search').trigger('click');
@@ -332,12 +245,7 @@
             console.log(url);
             location.href = url;
             return false;
-            // location.href = url;
-            //$('#myModal').load(url);
-        });
-
-
-
+         });
         $('#button-upload').on('click', function () {
             var that = this;
             //alert($('input[name=autoname]:checked').length);
@@ -345,7 +253,6 @@
             $('#form-upload').remove();
             $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="files[]" multiple value="" /></form>');
             $('#form-upload input[name=\'files[]\']').trigger('click');
-
             if (typeof timer != 'undefined') {
                 clearInterval(timer);
             }
@@ -369,16 +276,7 @@
                             $('#button-upload').prop('disabled', false);
                         },
                         success: function (result) {
-
                             if (result.code == 0) {
-                                if (result.msg) {
-                                    layer.msg(result.msg);
-                                }
-
-                            } else {
-
-                                console.log(result.data);
-
 <?php if ($folder == 'image') { ?>
                                     if (result.data) {
                                         parent_img_select(result.data, $(that).parent().find('input').attr('value'));
@@ -388,7 +286,6 @@
                                         parent_file_select(result.data);
                                     }
 <?php } ?>
-
                                 if (result.msg) {
                                     layer.msg(result.msg);
                                     setTimeout(function () {
@@ -397,9 +294,10 @@
                                 } else {
                                     location.href = location.href;
                                 }
-
-
-
+                            } else {
+                                if (result.msg) {
+                                    layer.msg(result.msg);
+                                }
                             }
                         },
                         error: function (xhr, ajaxOptions, thrownError) {
@@ -411,20 +309,13 @@
                 }
             }, 500);
         });
-
-
-
         //新建文件夹
         $('#button-folder').click(function () {
-            // layer.prompt({title: '输入任何口令，并确认', formType: 1}, function (text, index) {
             layer.prompt({title: '文件夹名称', value: '{:date("Y-m-d")}'}, function (val, index) {
-
-
                 if (escape(val).indexOf("%u") != -1) {
                     layer.msg('文件夹名称不能含有中文');
                     return false;
                 }
-
                 // layer.close(index);
                 $.ajax({
                     url: urls.folder,
@@ -439,9 +330,9 @@
                     },
                     success: function (result) {
                         if (result.code == 0) {
-                            layer.msg(result.msg);
-                        } else {
                             location.reload();
+                        } else {
+                            layer.msg(result.msg);
                         }
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
@@ -465,10 +356,9 @@
                     },
                     success: function (result) {
                         if (result.code == 0) {
-                            layer.msg(result.msg);
-
-                        } else {
                             location.href = location.href;
+                        } else {
+                            layer.msg(result.msg);
                         }
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
@@ -480,7 +370,8 @@
         $(".all-file").click(function () {
             $(".ids").prop("checked", this.checked);
         });
-    });
+    }
+    );
 </script> 
 <style>
     .uploader-list{ overflow: hidden; }
@@ -496,7 +387,6 @@
     .pagination > li {
         display: inline;
     }
-
     .pagination > li > a,
     .pagination > li > span {
         position: relative;
@@ -534,6 +424,5 @@
     label{
         display: block;
     }
-
 </style>
 {/block}
