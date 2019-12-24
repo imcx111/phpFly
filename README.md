@@ -16,6 +16,10 @@ Thinkphp5 + Layui Fly Template实现的一个社区项目，使用X-admin实现�
 3. 然后把程序代码覆盖到相应的目录，代码主要就是application extend public 这三个目录  
 4. 最后把根目录下的sql文件 导入到你的mysql数据库  
 5. 修改一下application目录下面的database.php文件 就OK了。。。
+6. 重要说明！！！！如下
+7. 修改tp5框架 thinkphp/library/traits/controller/Jump.php 文件
+8. 将其中的success 和 error两个方法中的 code返回值调换，success:code=0,error:code=1
+9. 这也是最让我受不了的一点，在我的编程逻辑中，没有消息就是最好的消息。
 
 
 #### 使用说明
