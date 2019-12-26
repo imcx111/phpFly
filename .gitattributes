@@ -1,0 +1,5 @@
+*.yml linguist-language=PHP 
+*.html linguist-language=PHP 
+*.js linguist-language=PHP 
+*.xml linguist-language=PHP
+*.css linguist-language=PHP 
